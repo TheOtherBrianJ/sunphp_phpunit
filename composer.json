@@ -5,10 +5,10 @@
         "phpunit/phpunit": "^8.0"
     },
     "autoload": {
-        "psr-4": { "WavePHP\\Cheer\\": "src" }
+        "psr-4": { "SunPHP\\Cheer\\": "src" }
     },
     "autoload-dev": {
-        "psr-4": { "WavePHP\\Cheer\\": "test" }
+        "psr-4": { "SunPHP\\Cheer\\": "test" }
     },
     "scripts": {
         "test": "phpunit test"
