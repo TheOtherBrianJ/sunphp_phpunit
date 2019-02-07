@@ -16,4 +16,9 @@ class Cheerleader
     {
         return $this->word . '!';
     }
+
+    public function doTheSplits()
+    {
+        throw new LackOfFlexibilityException("I can't do that!");
+    }
 }

@@ -34,4 +34,13 @@ class CheerleaderTest extends TestCase
         $this->assertThat($cheerleader->whatsThatSpell(),
             $this->equalTo('GO!'));
     }
+
+    /**
+     * @expectedException SunPHP\Cheer\LackOfFlexibilityException
+     */
+    public function testTheSplits()
+    {
+        $cheerleader = new Cheerleader();
+        $cheerleader->doTheSplits();
+    }
 }
