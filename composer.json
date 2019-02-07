@@ -1,5 +1,16 @@
 {
+    "name": "sunphp/cheer",
+    "description": "Example Cheer app for Sunshine PHP",
     "require-dev": {
         "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": { "WavePHP\\Cheer\\": "src" }
+    },
+    "autoload-dev": {
+        "psr-4": { "WavePHP\\Cheer\\": "test" }
+    },
+    "scripts": {
+        "test": "phpunit test"
     }
 }
