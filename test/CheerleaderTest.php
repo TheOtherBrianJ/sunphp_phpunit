@@ -55,6 +55,22 @@ class CheerleaderTest extends TestCase
         $cheerleader->gimmeAn("This is not a single character");
     }
 
+    /**
+     * @dataProvider gimmeAnProvider
+     */
+    public function testGimmeAn($parameter, $expectedResponse)
+    {
+        $cheerleader = new Cheerleader();
+        $this->assertThat($cheerleader->gimmeAn($parameter),
+            $this->equalTo($expectedResponse));
+    }
+
+    public function gimmeAnProvider()
+    {
+        yield ['G', 'G'];
+        yield ['O', 'O'];
+    }
+
     public function testPomShake()
     {
         $mockPom = $this->createMock(Pompom::class);
