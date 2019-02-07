@@ -36,11 +36,10 @@ class CheerleaderTest extends TestCase
             $this->equalTo('GO!'));
     }
 
-    /**
-     * @expectedException SunPHP\Cheer\LackOfFlexibilityException
-     */
     public function testTheSplits()
     {
+        $this->expectException('SunPHP\Cheer\LackOfFlexibilityException');
+
         $cheerleader = new Cheerleader();
         $cheerleader->doTheSplits();
     }
