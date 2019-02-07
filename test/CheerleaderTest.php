@@ -54,4 +54,28 @@ class CheerleaderTest extends TestCase
         $this->expectExceptionCode(619);
         $cheerleader->gimmeAn("This is not a single character");
     }
+
+    public function testPomShake()
+    {
+        $mockPom = $this->createMock(Pompom::class);
+        $mockPom->expects($this->once())
+            ->method('shake')
+            ->willReturn(true);
+
+        $cheerleader = new Cheerleader($mockPom);
+        $cheerleader->whatsThatSpell();
+    }
+
+    public function testPomShakeFail()
+    {
+        $mockPom = $this->createMock(Pompom::class);
+        $mockPom->expects($this->once())
+            ->method('shake')
+            ->willReturn(false);
+
+        $this->expectException(PomShakeFailException::class);
+
+        $cheerleader = new Cheerleader($mockPom);
+        $cheerleader->whatsThatSpell();
+    }
 }

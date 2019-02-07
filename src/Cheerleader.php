@@ -7,6 +7,15 @@ use InvalidArgumentException;
 class Cheerleader
 {
     private $word = '';
+    private $pompom;
+
+    public function __construct(Pompom $pompom = null)
+    {
+        if (empty($pompom)) {
+            $pompom = new Pompom();
+        }
+        $this->setPompom($pompom);
+    }
 
     public function gimmeAn($letter)
     {
@@ -20,11 +29,19 @@ class Cheerleader
 
     public function whatsThatSpell()
     {
+        if (!$this->pompom->shake()) {
+            throw new PomShakeFailException();
+        }
         return $this->word . '!';
     }
 
     public function doTheSplits()
     {
         throw new LackOfFlexibilityException("I can't do that!");
+    }
+
+    public function setPompom(Pompom $pompom)
+    {
+        $this->pompom = $pompom;
     }
 }
