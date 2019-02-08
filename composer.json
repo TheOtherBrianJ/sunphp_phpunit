@@ -1,6 +1,9 @@
 {
     "name": "sunphp/cheer",
     "description": "Example Cheer app for Sunshine PHP",
+    "require": {
+        "php": "^7.2"
+    },
     "require-dev": {
         "phpunit/phpunit": "^8.0"
     },
