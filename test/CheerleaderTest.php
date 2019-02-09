@@ -67,8 +67,8 @@ class CheerleaderTest extends TestCase
 
     public function gimmeAnProvider()
     {
-        yield ['G', 'G'];
-        yield ['O', 'O'];
+        yield 'gee_case' => ['G', 'G'];
+        yield 'ohh_case' => ['O', 'O'];
     }
 
     public function testPomShake()
